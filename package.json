@@ -1,0 +1,23 @@
+{
+  "name": "pi-permission",
+  "version": "1.0.0",
+  "keywords": [
+    "pi-package"
+  ],
+  "pi": {
+    "extensions": [
+      "./extensions"
+    ],
+    "skills": [
+      "./skills"
+    ],
+    "prompts": [
+      "./prompts"
+    ],
+    "themes": [
+      "./themes"
+    ]
+  },
+  "scripts": {},
+  "packageManager": "pnpm@10.29.2"
+}

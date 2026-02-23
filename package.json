@@ -7,17 +7,7 @@
   "pi": {
     "extensions": [
       "./extensions"
-    ],
-    "skills": [
-      "./skills"
-    ],
-    "prompts": [
-      "./prompts"
-    ],
-    "themes": [
-      "./themes"
     ]
   },
-  "scripts": {},
-  "packageManager": "pnpm@10.29.2"
+  "scripts": {}
 }

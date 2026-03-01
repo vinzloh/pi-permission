@@ -12,7 +12,7 @@ export default function (pi: ExtensionAPI) {
     // /\brm\b/i,
     // /\bgit push\b/i,
     /\bsudo\b/i,
-    // /\b(chmod|chown)\b.*777/i
+    /\b(chmod|chown)\b/i
   ];
 
   pi.on("tool_call", async (event, ctx) => {

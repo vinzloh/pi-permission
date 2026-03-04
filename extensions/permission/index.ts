@@ -12,6 +12,7 @@ export default function (pi: ExtensionAPI) {
     // /\brm\b/i,
     // /\bgit push\b/i,
     /\bsudo\b/i,
+    /\b\bcurl.*\|.*sh/i,
     /\b(chmod|chown)\b/i
   ];
 

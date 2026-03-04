@@ -9,5 +9,8 @@
       "./extensions"
     ]
   },
-  "scripts": {}
+  "scripts": {},
+  "devDependencies": {
+    "@mariozechner/pi-coding-agent": "latest"
+  }
 }

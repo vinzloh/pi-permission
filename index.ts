@@ -10,7 +10,7 @@ import type { ExtensionAPI } from "@mariozechner/pi-coding-agent";
 export default function (pi: ExtensionAPI) {
   const dangerousPatterns = [
     // /\brm\b/i,
-    // /\bgit push\b/i,
+    /\bgit push\b.*\b(main|master|production)\b/i,
     /\bsudo\b/i,
     /\b\bcurl.*\|.*sh/i,
     /\b(chmod|chown)\b/i

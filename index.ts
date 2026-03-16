@@ -12,7 +12,7 @@ export default function (pi: ExtensionAPI) {
 
   const dangerousPatterns = [
     // /\brm\b/i,
-    /\bgit push\b.*\b(main|master|production)\b/i,
+    new RegExp(`\\bgit push\\b.*\\b(${PROTECTED_BRANCHES.join("|")})\\b`, "i"),
     /\bsudo\b/i,
     /\b\bcurl.*\|.*sh/i,
     /\b(chmod|chown)\b/i

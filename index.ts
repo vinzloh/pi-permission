@@ -26,13 +26,14 @@ export default function (pi: ExtensionAPI) {
 
     const command = event.input.command as string;
     let isDangerous = dangerousPatterns.some((p) => p.test(command));
+    let currentBranch: string | undefined;
 
     // Check for bare git push - need to verify current branch
     if (!isDangerous && bareGitPushPattern.test(command)) {
       try {
         // Get current git branch
         const result = await pi.exec("git", ["branch", "--show-current"]);
-        const currentBranch = result.stdout.trim();
+        currentBranch = result.stdout.trim();
 
         if (PROTECTED_BRANCHES.includes(currentBranch.toLowerCase())) {
           isDangerous = true;
@@ -48,7 +49,8 @@ export default function (pi: ExtensionAPI) {
         return { block: true, reason: "Dangerous command blocked (no UI for confirmation)" };
       }
 
-      const choice = await ctx.ui.select(`⚠️ Dangerous command:\n\n  ${command}\n\nAllow?`, ["Yes", "No"]);
+      const commandWithBranch = currentBranch ? `${command} \x1b[1;31m${currentBranch}\x1b[0m` : command;
+      const choice = await ctx.ui.select(`⚠️ Dangerous command:\n\n  ${commandWithBranch}\n\nAllow?`, ["Yes", "No"]);
 
       if (choice !== "Yes") {
         return { block: true, reason: "Blocked by user" };

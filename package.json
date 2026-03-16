@@ -6,11 +6,11 @@
   ],
   "pi": {
     "extensions": [
-      "./extensions"
+      "./index.ts"
     ]
   },
   "scripts": {},
   "devDependencies": {
-    "@mariozechner/pi-coding-agent": "latest"
+    "@mariozechner/pi-coding-agent": "*"
   }
 }

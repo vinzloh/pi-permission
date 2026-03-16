@@ -9,7 +9,7 @@ importers:
   .:
     devDependencies:
       '@mariozechner/pi-coding-agent':
-        specifier: latest
+        specifier: '*'
         version: 0.55.4(ws@8.19.0)(zod@3.25.76)
 
 packages:
